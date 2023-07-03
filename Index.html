@@ -32,34 +32,48 @@
             <h1>Cyber security and <br><span>Development web</span> <br>Course.</h1>
             <p class="par">
                 <strong>Prepare to take off your career in the world of web programming and cybersecurity.</strong>
-
             </p>
 
-                <button class="cn"><a href="#">JOIN US</a></button>
+            <button class="cn" onclick="showForm()">JOIN US</button>
 
-                <div class="form">
-                    <h2>Login Here</h2>
-                    <input type="email" name="email" placeholder="Enter Email Here">
-                    <input type="password" name="" placeholder="Enter Password Here">
-                    <button class="btnn"><a href="#">Login</a></button>
+            <div class="form" id="signup-form" style="display: none;">
+                <h2>Login Here</h2>
+                <input type="email" name="email" id="email" placeholder="Enter Email Here">
+                <input type="password" name="password" id="password" placeholder="Enter Password Here">
+                <button class="btnn" onclick="submitForm()">Register</button>
 
-                    <p class="link">Don't have an account<br>
-                    <a href="#">Sign up </a> here</a></p>
-                    <p class="liw">Log in with</p>
+                <p class="link">Already have an account? <a href="#">Log in here</a></p>
+                <p class="liw">Log in with</p>
 
-                    <div class="icons">
-                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
-                        
-                    </div>
-
+                <div class="icons">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-google"></ion-icon></a>
                 </div>
-                    </div>
-                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        function showForm() {
+            var form = document.getElementById("signup-form");
+            form.style.display = "block";
+        }
+
+        function submitForm() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            if (email && password) {
+                var message = "Email: " + email + "\nPassword: " + password;
+                // You can replace the code below with your own logic to send the message via email or any other method
+                alert("Form submitted successfully!\n\nMessage:\n\n" + message);
+            } else {
+                alert("Please fill in all the fields.");
+            }
+        }
+    </script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 </html>
